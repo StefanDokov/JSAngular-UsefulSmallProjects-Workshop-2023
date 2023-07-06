@@ -63,6 +63,9 @@
 .userB a {
     color: orange;
 }
+.userB a:first-of-type {
+    color: rgb(122, 122, 248);
+}
 .userB a:hover {
     color: aliceblue;
 }
