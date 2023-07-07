@@ -130,15 +130,15 @@
 .container {
   padding-top: 300px;
   margin: 0 auto;
-  height: 105vh;
+  height: 115vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2em;
+  gap: 5em;
 }
 .controler-loop {
-  width: 15%;
+  width: 16%;
   font-size: 1.3em;
   padding-top: 55px;
   display: flex;
@@ -165,7 +165,7 @@
 }
 
 .looping-cars {
-  width: 50%;
+  width: 66%;
   height: 600px;
   display: flex;
   justify-content: space-between;
