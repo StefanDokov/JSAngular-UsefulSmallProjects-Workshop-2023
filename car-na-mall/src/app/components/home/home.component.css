@@ -130,7 +130,7 @@
 .container {
   padding-top: 300px;
   margin: 0 auto;
-  height: 90vh;
+  height: 105vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -140,6 +140,13 @@
 .controler-loop {
   width: 15%;
   font-size: 1.3em;
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.controler-loop p {
+  line-height: 1.2;
 }
 .controler-loop span {
   padding: 5px;
@@ -163,7 +170,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3em;
+  gap: 1.5em;
 }
 
 .item-1 {
@@ -238,39 +245,67 @@
   margin-top: 20px;
 }
 
-.site-footer {
-  display: flex;
-  flex-direction: column;
-  padding: 4em 0;
-  background: #000;
+.how-it-works .step {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
 }
-@media (min-width: 768px) {
-  .site-footer {
-    padding: 8em 0;
-  }
+.how-it-works .step:after {
+  width: 100%;
+  height: 4px;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 25px;
+  background: #007bff;
 }
-.site-footer .border-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+.how-it-works .step:last-child:after {
+  display: none;
 }
-.site-footer p {
-  color: #fff;
+.how-it-works .step .number {
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #007bff;
+  background: #fff;
+  border-radius: 50%;
+  color: #007bff;
+  display: block;
+  position: relative;
+  margin: 0 auto 10px auto;
 }
-.site-footer h2,
-.site-footer h3,
-.site-footer h4,
-.site-footer h5 {
-  color: #fff;
+.how-it-works .step .number > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  color: #007bff;
 }
-.site-footer a {
-  color: rgba(255, 255, 255, 0.5);
+.how-it-works .step .caption {
+  display: block;
 }
-.site-footer a:hover {
-  color: white;
+
+.containerz {
+  width: 60%;
+  height: 50vh;
+  padding: 4em;
+  text-align: center;
+  margin: 0 auto;
+  border-top: 3px solid #007bff;
+ 
 }
-.site-footer ul li {
-  margin-bottom: 10px;
+
+.containerz h2 {
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
-.site-footer .footer-heading {
-  font-size: 16px;
-  color: #fff;
+
+.containerz p {
+  font-size: 1.4em;
+  margin-bottom: 50px;
 }
