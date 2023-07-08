@@ -72,6 +72,7 @@
   flex: 1 1 100%;
   font-size: 2em;
   background-color: aliceblue;
+  opacity: 0.9;
   padding: 10px;
   border-radius: 5px 0 0 5px;
 }
@@ -311,4 +312,17 @@
 .containerz p {
   font-size: 1.4em;
   margin-bottom: 50px;
+}
+
+
+@media (width < 866px) {
+  .listing {
+    display: none;
+  }
+  .middle {
+    display: none;
+  }
+  .containerz {
+    display: none;
+  }
 }
