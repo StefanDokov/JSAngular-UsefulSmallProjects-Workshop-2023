@@ -43,12 +43,16 @@
 .ctext {
     flex: 0 0 400px;
     font-size: 1.1em;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .ctext h3 {
     font-size: 1.5em;
     margin-bottom: 20px;
+}
+
+.ctext p {
+    margin-bottom: 10px;
 }
 
 .cpic {
@@ -135,12 +139,15 @@
 .revtext {
     flex: 0 0 400px;
     font-size: 1.1em;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .revtext h3 {
     font-size: 1.5em;
     margin-bottom: 20px;
+}
+.revtext p {
+    margin-bottom: 10px;
 }
 
 .revpic {
