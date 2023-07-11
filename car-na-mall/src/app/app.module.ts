@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CreateComponent } from './components/create/create.component';
 import { CarslistComponent } from './components/carslist/carslist.component';
 import { DetailsComponent } from './components/details/details.component';
+import { FourofourpageComponent } from './components/fourofourpage/fourofourpage.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DetailsComponent } from './components/details/details.component';
     CreateComponent,
     CarslistComponent,
     DetailsComponent,
+    FourofourpageComponent,
   ],
   imports: [
     BrowserModule,

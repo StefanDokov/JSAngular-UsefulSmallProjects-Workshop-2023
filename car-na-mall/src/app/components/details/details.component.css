@@ -138,12 +138,12 @@
   color: red;
   background: bisque;
   width: 520px;
-  height: 450px;
+  height: 500px;
   font-size: 1.4em;
   padding: 15px;
   border-radius: 10px;
   background-image: url("/assets/images/detailsbg.jpg");
-  background-size: 600px;
+  background-size: 800px;
   font-weight: bold;
   text-align: right;
 }
