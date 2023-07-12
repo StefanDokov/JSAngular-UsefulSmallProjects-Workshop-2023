@@ -38,7 +38,7 @@
                 </li>
               </ul>
               <div class="rent-action">
-                <a href="contact.html" class="btn btn-primary" disabled="true">Rent Now</a> 
+                <a href="contact.html" class="btn btn-primary">Rent Now</a> 
                 <a href="contact.html" class="btn btn-primary">Edit</a>
                 <a href="contact.html" class="btn btn-primary">Delete</a>
               </div>
@@ -56,12 +56,17 @@
                 <h2>Reserve this car</h2>
                 <form action="">
                 <label for="from">From</label>
-                <input type="text" name="form">
+                <input type="text" name="form" placeholder="dd-mm-yyyy">
                 <label for="for">How many days?</label>
-                <input type="text" name="for">
+                <select name="for">
+                  <option value="one">1 day</option>
+                  <option value="two">2 days</option>
+                  <option value="three">3 days</option>
+                </select>
                 <label for="card">Card Number</label>
                 <input type="text" name="card">
-                <p>$200</p>
+                <label for="cost">Cost</label>
+                <input type="text" name="cost" disabled="true">
                 <button type="submit">Pay</button>
                 </form>
             </div>

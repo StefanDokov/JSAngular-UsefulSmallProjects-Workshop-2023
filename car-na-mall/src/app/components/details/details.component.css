@@ -138,12 +138,12 @@
   color: red;
   background: bisque;
   width: 520px;
-  height: 500px;
+  height: 520px;
   font-size: 1.4em;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   background-image: url("/assets/images/detailsbg.jpg");
-  background-size: 800px;
+  background-size: 900px;
   font-weight: bold;
   text-align: right;
 }
@@ -156,10 +156,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
+  gap: 10px;
 }
 .rentoform form input {
   border-radius: 5px;
+  color: black;
+}
+.rentoform form input::placeholder {
+  color: rgb(168, 166, 166);
+  font-size: 18px;
 }
 
 .rentoform form button {
@@ -187,11 +192,15 @@
 .rent-action a:nth-of-type(3) {
   background-color: indianred;
   color: white;
-  pointer-events: none;
-  opacity: 0.6;
 }
 
 .rent-action a:nth-of-type(3):hover {
   background-color: red;
   color: black;
 }
+
+select {
+  width: 55%;
+  color: black;
+}
+

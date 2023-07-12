@@ -15,6 +15,7 @@ import { CreateComponent } from './components/create/create.component';
 import { CarslistComponent } from './components/carslist/carslist.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FourofourpageComponent } from './components/fourofourpage/fourofourpage.component';
+import { EditpageComponent } from './components/editpage/editpage.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FourofourpageComponent } from './components/fourofourpage/fourofourpage
     CarslistComponent,
     DetailsComponent,
     FourofourpageComponent,
+    EditpageComponent,
   ],
   imports: [
     BrowserModule,
