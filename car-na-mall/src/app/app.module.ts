@@ -16,6 +16,7 @@ import { CarslistComponent } from './components/carslist/carslist.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FourofourpageComponent } from './components/fourofourpage/fourofourpage.component';
 import { EditpageComponent } from './components/editpage/editpage.component';
+import { DeletepageComponent } from './components/deletepage/deletepage.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditpageComponent } from './components/editpage/editpage.component';
     DetailsComponent,
     FourofourpageComponent,
     EditpageComponent,
+    DeletepageComponent,
   ],
   imports: [
     BrowserModule,
