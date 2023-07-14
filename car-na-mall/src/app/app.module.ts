@@ -17,6 +17,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { FourofourpageComponent } from './components/fourofourpage/fourofourpage.component';
 import { EditpageComponent } from './components/editpage/editpage.component';
 import { DeletepageComponent } from './components/deletepage/deletepage.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DeletepageComponent } from './components/deletepage/deletepage.componen
     FourofourpageComponent,
     EditpageComponent,
     DeletepageComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
