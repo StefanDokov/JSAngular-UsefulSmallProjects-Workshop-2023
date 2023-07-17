@@ -3,7 +3,7 @@
     height: 90vh;
     background-image: url("/assets/images/carslistbg.jpg");
     background-size: cover;
-    background-position: 0 -170px;
+    background-position: 0 -250px;
     display: flex;
     flex-direction: column;
     justify-content: center;

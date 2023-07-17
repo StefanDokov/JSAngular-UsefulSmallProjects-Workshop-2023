@@ -1,18 +1,18 @@
 <header class="header">
     <a href="#" class="logo">CarNaMall</a>
     <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Cars</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/cars">Cars</a>
+        <a routerLink="/services">Services</a>
+        <a routerLink="/about">About</a>
+        <a routerLink="/contact">Contact</a>
         <div class="userA" *ngIf="isLogged">
-            <a href="#">Register</a>
-            <a href="#">Login</a>
+            <a routerLink="/register">Register</a>
+            <a routerLink="/login">Login</a>
         </div>
         <div class="userB" *ngIf="!isLogged">
-            <a href="#">Create</a>
-            <a href="#">Profile</a>
+            <a routerLink="/create">Create</a>
+            <a routerLink="/profile">Profile</a>
             <a href="#">Logout</a>
         </div>
     </nav>

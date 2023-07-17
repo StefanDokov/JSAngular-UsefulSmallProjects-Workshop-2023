@@ -3,7 +3,7 @@
   height: 90vh;
   background-image: url("/assets/images/servbg.jpg");
   background-size: cover;
-  background-position: 0 -120px;
+  background-position: 0 -300px;
   display: flex;
   flex-direction: column;
   justify-content: center;

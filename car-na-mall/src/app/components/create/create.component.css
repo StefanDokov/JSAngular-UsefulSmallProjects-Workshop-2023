@@ -3,7 +3,7 @@
   height: 90vh;
   background-image: url("/assets/images/createbg.jpg");
   background-size: cover;
-  background-position: 0 -900px;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
