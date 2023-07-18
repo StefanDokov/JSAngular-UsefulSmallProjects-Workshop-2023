@@ -25,16 +25,15 @@ class PostController implements Controller {
     }
 
 
-
     private create = async (
         req: Request,
         res: Response,
         next: NextFunction
     ) : Promise<Response | void> => {
         try {
-         const {title, body } = req.body;
+         const {fname, sname, email, descr } = req.body;
 
-         const post = await this.PostService.create(title, body);
+         const post = await this.PostService.create(fname, sname, email, descr);
 
          res.status(201).json({post});
 

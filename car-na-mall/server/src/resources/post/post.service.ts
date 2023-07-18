@@ -3,11 +3,12 @@ import Post from "./post.interface";
 
 class PostService {
     private post = PostModel;
+    
 
     // Create a new post
-    public async create(title: string, body: string): Promise<Post> {
+    public async create(fname: string, sname: string, email: string, descr: string): Promise<Post> {
         try{
-         const post = await this.post.create({title, body});
+         const post = await this.post.create({fname, sname, email, descr});
 
          return post;
         }catch(err){

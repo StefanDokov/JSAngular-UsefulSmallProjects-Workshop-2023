@@ -3,14 +3,22 @@ import Post from './post.interface';
 
 const PostSchema = new Schema(
     {
-        title: {
+        fname: {
             type: String,
             required: true,
         },
-        body: {
+        sname: {
             type: String,
             required: true,
         },
+        email: {
+            type: String,
+            required: true,
+        },
+        descr: {
+            type: String,
+            required: true
+        }
     },
     {
         timestamps: true
