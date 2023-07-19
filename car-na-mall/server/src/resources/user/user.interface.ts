@@ -1,16 +1,16 @@
 import { Document, RefType } from "mongoose";
 
-export interface Ureserve extends Document {
+export default interface Ureserve extends Document {
     date: string;
     forDays: number;
     cardNum: string;
     costPrice: number;
-    clientId: RefType;
 }
 
 export default interface User extends Document {
     email: string;
     username: string;
     password: string;
+    userReserves: Ureserve[];
     isValidPassword(password: string): Promise<Error | boolean>
 }

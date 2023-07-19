@@ -22,12 +22,7 @@ const ReserveSchema = new Schema( {
         required: false,
 
     }, 
-    clientId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Rent',
-        required: false,
-
-    }
+    
 });
 
 const UserSchema = new Schema({
@@ -49,6 +44,7 @@ const UserSchema = new Schema({
         type: [ReserveSchema],
         required: false,
     }
+        
    
 }, {timestamps: true});
 

@@ -1,6 +1,29 @@
 import { Schema, model } from "mongoose";
 import {Rent} from "./rents.interface";
 
+const reserveInfo = new Schema(
+    {
+        resOwner: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+    
+        dateFrom: {
+            type: String,
+            required: true,
+        },
+        dateDays: {
+            type: String,
+            required: true,
+        },
+        cardN: {
+            type: String,
+            required: true,
+        }
+}
+)
+
+
 const RentSchema = new Schema(
     {
         model: {
@@ -31,25 +54,10 @@ const RentSchema = new Schema(
             type: String,
             required: true,
         },
-        reserve: [{
-            resOwner: {
-                type: Schema.Types.ObjectId,
-                ref: 'User',
-            },
-        
-            dateFrom: {
-                type: String,
-                required: true,
-            },
-            dateDays: {
-                type: String,
-                required: true,
-            },
-            cardN: {
-                type: String,
-                required: true,
-            }
-    }]
+        reserve: {
+            type: [reserveInfo],
+            required: false,
+        }
     },
     {
         timestamps: true

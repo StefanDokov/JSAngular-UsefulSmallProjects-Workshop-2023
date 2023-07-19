@@ -28,6 +28,10 @@ class UserController implements Controller {
             this.login
         );
         this.router.get(`${this.path}`, authenticated, this.getUser);
+        this.router.post(
+            `${this.path}/update`,
+            this.updateU
+        );
     }
 
     private register = async(
@@ -70,6 +74,20 @@ class UserController implements Controller {
          }
          res.status(200).json({user: req.user})
     };
+
+    private updateU = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) : Promise<Response | void> => {
+        try {
+            const {id, update} = req.body;
+            const resu = await this.UserService.updateUser(id, update);
+            res.status(200).json({resu});
+        } catch (error) {
+            return next(new HttpException(404, 'No such user'))
+        }
+    }
 }
 
 export default UserController;
