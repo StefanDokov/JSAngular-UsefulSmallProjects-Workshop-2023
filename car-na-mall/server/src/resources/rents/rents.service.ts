@@ -1,5 +1,5 @@
 import RentsModel from "./rents.model";
-import { Rent } from "./rents.interface";
+import { Rent, Reserve } from "./rents.interface";
 
 class RentService {
     private rents = RentsModel;
@@ -64,6 +64,21 @@ class RentService {
             throw new Error(error.message);
         }
 
+    }
+    public async updateRentOffer(rentId: string,
+        update: Reserve,
+    ): Promise<string | Error | void> {
+        try {
+            const renta = await this.rents.findById(rentId);
+            if (!renta) {
+                throw new Error ('Unable to find a user with that Email Address')
+            }
+            renta.reserves.push(update);
+            await renta.save();
+            
+        } catch (error) {
+            throw new Error('Unable to login user');
+        }
     }
 
 

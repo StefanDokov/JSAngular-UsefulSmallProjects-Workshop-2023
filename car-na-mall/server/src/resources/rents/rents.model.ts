@@ -10,15 +10,19 @@ const reserveInfo = new Schema(
     
         dateFrom: {
             type: String,
-            required: true,
+            required: false,
         },
         dateDays: {
             type: String,
-            required: true,
+            required: false,
         },
         cardN: {
             type: String,
-            required: true,
+            required: false,
+        }, 
+        costMoney: {
+            type: Number,
+            required: false,
         }
 }
 )
@@ -54,7 +58,7 @@ const RentSchema = new Schema(
             type: String,
             required: true,
         },
-        reserve: {
+        reserves: {
             type: [reserveInfo],
             required: false,
         }

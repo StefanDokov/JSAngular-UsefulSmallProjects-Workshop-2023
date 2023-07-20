@@ -12,5 +12,16 @@ const login = Joi.object({
     password: Joi.string().required(),
 });
 
+const update = Joi.object({
+    id: Joi.string().required(),
+    update: {
+        date: Joi.string().required(),
+        forDays: Joi.number().min(1).required(),
+        cardNum: Joi.string().required(),
+        costPrice: Joi.number().min(1).required(),
+        reserveUser: Joi.string().required()
+    }
+});
 
-export default { register, login }; 
+
+export default { register, login, update }; 

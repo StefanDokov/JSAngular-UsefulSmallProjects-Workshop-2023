@@ -30,6 +30,7 @@ class UserController implements Controller {
         this.router.get(`${this.path}`, authenticated, this.getUser);
         this.router.post(
             `${this.path}/update`,
+            validationMiddleware(validate.update),
             this.updateU
         );
     }

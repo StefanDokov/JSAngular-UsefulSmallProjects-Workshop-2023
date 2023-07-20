@@ -5,6 +5,7 @@ export interface Reserve extends Document {
     dateFrom: string;
     dateDays: number;
     cardN: string;
+    costMoney: number;
 }
 
 export interface Rent extends Document {
