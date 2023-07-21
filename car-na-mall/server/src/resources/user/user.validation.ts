@@ -19,7 +19,7 @@ const update = Joi.object({
         forDays: Joi.number().min(1).required(),
         cardNum: Joi.string().required(),
         costPrice: Joi.number().min(1).required(),
-        reserveUser: Joi.string().required()
+        reserveId: Joi.string().required()
     }
 });
 

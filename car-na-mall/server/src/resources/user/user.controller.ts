@@ -33,6 +33,10 @@ class UserController implements Controller {
             validationMiddleware(validate.update),
             this.updateU
         );
+        this.router.post(
+            `${this.path}/delInfo`,
+            this.delInfo
+        );
     }
 
     private register = async(
@@ -84,6 +88,19 @@ class UserController implements Controller {
         try {
             const {id, update} = req.body;
             const resu = await this.UserService.updateUser(id, update);
+            res.status(200).json({resu});
+        } catch (error) {
+            return next(new HttpException(404, 'No such user'))
+        }
+    }
+    private delInfo = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ) : Promise<Response | void> => {
+        try {
+            const { id, infoId } = req.body;
+            const resu = await this.UserService.updateUser(id, infoId);
             res.status(200).json({resu});
         } catch (error) {
             return next(new HttpException(404, 'No such user'))

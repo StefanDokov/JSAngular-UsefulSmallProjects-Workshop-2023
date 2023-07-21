@@ -65,6 +65,22 @@ class UserService {
             throw new Error('Unable to login user');
         }
     }
+    public async delInfo(
+        userId: string,
+        infoId: string,
+    ): Promise<string | Error | void> {
+        try {
+            let usera = await this.user.findById(userId);
+            if (!usera) {
+                throw new Error ('Unable to find a user with that Email Address')
+            }
+            
+            usera.userReserves = usera.userReserves.filter(el => el._id !== infoId);
+            usera.save();
+        } catch (error) {
+            throw new Error('Unable to login user');
+        }
+    }
 
 }
 

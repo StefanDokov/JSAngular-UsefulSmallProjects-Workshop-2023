@@ -22,9 +22,9 @@ const ReserveSchema = new Schema( {
         required: false,
 
     }, 
-    reserveUser: {
+    reserveId: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Rent'
     }
     
 });

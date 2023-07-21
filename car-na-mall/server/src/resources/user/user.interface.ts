@@ -5,7 +5,7 @@ export default interface Ureserve extends Document {
     forDays: number;
     cardNum: string;
     costPrice: number;
-    reserveUser: RefType;
+    reserveId: RefType;
 }
 
 export default interface User extends Document {
