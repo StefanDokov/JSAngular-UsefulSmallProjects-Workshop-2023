@@ -15,10 +15,15 @@ class UserService {
         password: string,
     ): Promise<string | Error> {
         try {
+            const existingUser = await this.user.findOne({ email });
+            if (existingUser) {
+                throw new Error('User already exists');
+              }
+
             const user = await this.user.create({
                 username, email, password
             })
-
+            
             const accessToken = token.createToken(user);
             return accessToken;
         } catch (error) {
@@ -43,8 +48,8 @@ class UserService {
             } else {
                 throw new Error('Wrong credentials given');
             }
-        } catch (error) {
-            throw new Error('Unable to login user');
+        } catch (error: any) {
+            throw new Error(error.message);
         }
     }
 
@@ -62,7 +67,7 @@ class UserService {
                 {$push: {userReserves: update}}, { new: true,});
             
         } catch (error) {
-            throw new Error('Unable to login user');
+            throw new Error('Unable to update this offer');
         }
     }
     public async delInfo(
@@ -78,7 +83,7 @@ class UserService {
             usera.userReserves = usera.userReserves.filter(el => el._id !== infoId);
             usera.save();
         } catch (error) {
-            throw new Error('Unable to login user');
+            throw new Error('Unable to delete this offer');
         }
     }
 

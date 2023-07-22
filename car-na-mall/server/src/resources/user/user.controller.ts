@@ -31,10 +31,12 @@ class UserController implements Controller {
         this.router.post(
             `${this.path}/update`,
             validationMiddleware(validate.update),
+            authenticated,
             this.updateU
         );
         this.router.post(
             `${this.path}/delInfo`,
+            authenticated,
             this.delInfo
         );
     }
@@ -45,13 +47,13 @@ class UserController implements Controller {
         next: NextFunction
     ): Promise<Response | void> => {
         try {
-            const {username, email, password} = req.body;
-            const token = await this.UserService.register(
-                username,
+            const {email, username, password} = req.body;
+            const token = await this.UserService.register(  
                 email,
+                username,
                 password,
             );
-            res.status(201).json({token});
+            res.status(201).json({token, message: 'Registered!'});
         } catch (error: any) {
             next(new HttpException(400, error.message))
         }
@@ -64,7 +66,7 @@ class UserController implements Controller {
           try {
             const {email, password} = req.body;
             const token = await this.UserService.login(email, password);
-            res.status(200).json({token});
+            res.status(200).json({token, message: 'Logged In'});
           } catch (error: any) {
             next(new HttpException(400, error.message));
           }

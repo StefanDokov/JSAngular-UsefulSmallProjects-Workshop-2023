@@ -19,7 +19,7 @@ class RentController implements Controller {
     private initialiseRoutes(): void {
         this.router.post(
             `${this.path}/create`,
-            
+            authenticated,
             validationMiddleware(validate.craft),
             this.create
         );
@@ -34,15 +34,18 @@ class RentController implements Controller {
         this.router.post(
             `${this.path}/:id/edit`,
             validationMiddleware(validate.craft),
+            authenticated,
             this.editRent
         );
         this.router.post(
             `${this.path}/:id/delete`,
+            authenticated,
             this.deleteRent
         );
         this.router.post(
             `${this.path}/:id/link`,
             validationMiddleware(validate.rentInfo),
+            authenticated,
             this.updateInfo
         );
         
