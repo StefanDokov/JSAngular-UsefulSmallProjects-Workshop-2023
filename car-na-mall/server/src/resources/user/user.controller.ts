@@ -47,10 +47,10 @@ class UserController implements Controller {
         next: NextFunction
     ): Promise<Response | void> => {
         try {
-            const {email, username, password} = req.body;
-            const token = await this.UserService.register(  
-                email,
+            const {username, email, password} = req.body;
+            const token = await this.UserService.register(    
                 username,
+                email,
                 password,
             );
             res.status(201).json({token, message: 'Registered!'});

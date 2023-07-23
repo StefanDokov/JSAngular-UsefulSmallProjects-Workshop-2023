@@ -10,9 +10,10 @@ class RentService {
         seats: number,
         transmission: string,
         price: number,
-        ownerId: string,): Promise<Rent> {
+        year:number,
+        ownerId: string,): Promise<Rent | Error> {
             try {
-                const rent = await this.rents.create({model, image, doors, seats, transmission, price, ownerId});
+                const rent = await this.rents.create({model, image, doors, seats, transmission, price, year, ownerId});
 
                 return rent;
             } catch (error) {

@@ -19,7 +19,6 @@ class RentController implements Controller {
     private initialiseRoutes(): void {
         this.router.post(
             `${this.path}/create`,
-            authenticated,
             validationMiddleware(validate.craft),
             this.create
         );
@@ -28,7 +27,7 @@ class RentController implements Controller {
             this.getAll
         );
         this.router.get(
-            `${this.path}/:id`,
+            `${this.path}/details/:id`,
             this.getOne
         );
         this.router.post(
@@ -57,9 +56,9 @@ class RentController implements Controller {
         next: NextFunction
     ) : Promise<Response | void> => {
         try {
-         const {model, image, doors, seats, transmission, price, ownerId} = req.body;
+         const {model, image, doors, seats, transmission, price, year, ownerId} = req.body;
 
-         const post = await this.RentService.craft(model, image, doors, seats, transmission, price, ownerId);
+         const post = await this.RentService.craft(model, image, doors, seats, transmission, price, year, ownerId);
 
          res.status(201).json({post});
 
@@ -86,8 +85,8 @@ class RentController implements Controller {
         next: NextFunction
     ) : Promise<Response | void> => {
         try {
-            const {id} = req.body;
-            const resu = await this.RentService.getOneRent(id);
+            
+            const resu = await this.RentService.getOneRent(req.params.id);
             res.status(200).json({resu});
         } catch (error) {
             return next(new HttpException(404, 'Can\'t reach rents'))

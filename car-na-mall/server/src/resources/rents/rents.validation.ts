@@ -7,6 +7,7 @@ const craft = Joi.object({
     seats: Joi.number().min(2).required(),
     transmission: Joi.string().required(),
     price: Joi.number().required(),
+    year: Joi.number().min(2000).required(),
     ownerId: Joi.string().required(),
 });
 

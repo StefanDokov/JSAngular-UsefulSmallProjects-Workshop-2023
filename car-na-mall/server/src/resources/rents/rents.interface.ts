@@ -15,6 +15,7 @@ export interface Rent extends Document {
     seats: number;
     transmission: string;
     price: number;
+    year: number;
     ownerId: string;
     reserves: Reserve[];
 }

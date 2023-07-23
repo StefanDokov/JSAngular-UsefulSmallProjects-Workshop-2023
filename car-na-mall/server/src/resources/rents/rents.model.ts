@@ -50,6 +50,10 @@ const RentSchema = new Schema(
             type: String,
             required: true,
         },
+        year: {
+            type: Number,
+            required: true,
+        },
         price: {
             type: Number,
             required: true,
