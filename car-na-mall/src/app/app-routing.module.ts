@@ -13,6 +13,7 @@ import { FourofourpageComponent } from './components/fourofourpage/fourofourpage
 import { DetailsComponent } from './components/details/details.component';
 import { EditpageComponent } from './components/editpage/editpage.component';
 import { DeletepageComponent } from './components/deletepage/deletepage.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -42,11 +43,13 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent
+    component: CreateComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -57,16 +60,19 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent
   },
   {
-    path: 'edit',
-     component: EditpageComponent
+    path: 'details/:id/edit',
+     component: EditpageComponent,
+     canActivate: [AuthGuard],
+
   },
   {
-    path: 'delete',
-    component: DeletepageComponent
+    path: 'details/:id/delete',
+    component: DeletepageComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

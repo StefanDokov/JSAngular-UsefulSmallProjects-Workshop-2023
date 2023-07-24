@@ -62,6 +62,7 @@
 }
 .userA a:hover {
     color: rgb(137, 195, 247);
+    cursor: pointer;
 }
 
 .userB a {
@@ -77,4 +78,5 @@
 
 .userB a:hover {
     color: rgb(137, 195, 247);
+    cursor: pointer;
 }

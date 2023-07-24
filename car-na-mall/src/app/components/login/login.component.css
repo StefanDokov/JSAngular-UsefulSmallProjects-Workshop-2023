@@ -39,8 +39,8 @@
 }
 
 .form {
-  width: 350px;
-  height: 500px;
+  width: 400px;
+  height: 550px;
   background: url("/assets/images/loginbg.jpg");
   background-size: cover;
   margin-top: 5em;

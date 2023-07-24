@@ -18,6 +18,11 @@ import { FourofourpageComponent } from './components/fourofourpage/fourofourpage
 import { EditpageComponent } from './components/editpage/editpage.component';
 import { DeletepageComponent } from './components/deletepage/deletepage.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { AuthenticateComponent } from './components/authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +42,20 @@ import { ProfileComponent } from './components/profile/profile.component';
     EditpageComponent,
     DeletepageComponent,
     ProfileComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgToastModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
