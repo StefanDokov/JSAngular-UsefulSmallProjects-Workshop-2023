@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         },
         error:(err) => {
           this.toast.error({detail: "ERROR", summary: err.error.errors? err.error.errors[0] : err.error.message ,duration: 5000});
-          console.log(err)
+          
         }
 
        })

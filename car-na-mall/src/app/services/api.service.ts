@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getRents(){
-    return this.http.get<any>(`${this.baseUrl}/rents`);
+    return this.http.get<any[]>(`${this.baseUrl}/rents`);
   }
   createRent(craftObj: Object){
       return this.http.post<any>(`${this.baseUrl}/rents/create`, craftObj);
