@@ -63,9 +63,9 @@ class UserService {
                 throw new Error ('Unable to find a user with that Email Address')
             }
             
-            await this.user.findByIdAndUpdate(userId, 
-                {$push: {userReserves: update}}, { new: true,});
+            usera.userReserves.push(update);
             
+            await usera.save();
         } catch (error) {
             throw new Error('Unable to update this offer');
         }
@@ -90,3 +90,4 @@ class UserService {
 }
 
 export default UserService;
+

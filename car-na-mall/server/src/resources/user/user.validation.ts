@@ -13,7 +13,7 @@ const login = Joi.object({
 });
 
 const update = Joi.object({
-    id: Joi.string().required(),
+    userId: Joi.string().required(),
     update: {
         date: Joi.string().required(),
         forDays: Joi.number().min(1).required(),

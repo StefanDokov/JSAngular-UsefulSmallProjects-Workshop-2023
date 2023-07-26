@@ -25,6 +25,7 @@ async function authenticatedMiddleware(
             return next(new HttpException(401, 'Unauthorized'));
         }
         const user = await UserModel.findById(payload.id)
+        .populate("userReserves.reserveId")
         .select('-password')
         .exec();
         if (!user) {

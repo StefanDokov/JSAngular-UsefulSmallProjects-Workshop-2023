@@ -88,8 +88,8 @@ class UserController implements Controller {
         next: NextFunction
     ) : Promise<Response | void> => {
         try {
-            const {id, update} = req.body;
-            const resu = await this.UserService.updateUser(id, update);
+            const {userId, update} = req.body;
+            const resu = await this.UserService.updateUser(userId, update);
             res.status(200).json({resu});
         } catch (error) {
             return next(new HttpException(404, 'No such user'))
