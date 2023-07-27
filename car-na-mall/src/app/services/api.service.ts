@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
   getRents(){
     return this.http.get<any[]>(`${this.baseUrl}/rents`);
   }
-  createRent(craftObj: Object){
+  createRent(craftObj: any){
       return this.http.post<any>(`${this.baseUrl}/rents/create`, craftObj);
   }
   getOneRent(id: any){

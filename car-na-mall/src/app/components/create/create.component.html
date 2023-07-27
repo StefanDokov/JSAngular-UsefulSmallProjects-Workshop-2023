@@ -7,17 +7,17 @@
 	<div class="containercr">
 		<div class="contact-box">
 			<div class="left"></div>
-			<div class="right">
+			<form class="right" [formGroup]="createForm">
 				<h2>Create a Post</h2>
-				<input type="text" class="field" placeholder="Model">
-				<input type="text" class="field" placeholder="imageUrl">
-				<input type="text" class="field" placeholder="Doors">
-				<input type="text" class="field" placeholder="Seats">
-				<input type="text" class="field" placeholder="Transmission">
-				<input type="text" class="field" placeholder="Price/Day">
-				<input type="text" class="field" placeholder="Year">
-				<button class="btn">Post</button>
-			</div>
+				<input formControlName="model" type="text" class="field" placeholder="Model">
+				<input formControlName="image" type="text" class="field" placeholder="imageUrl">
+				<input formControlName="doors" type="text" class="field" placeholder="Doors">
+				<input formControlName="seats" type="text" class="field" placeholder="Seats">
+				<input formControlName="transmission" type="text" class="field" placeholder="Transmission">
+				<input formControlName="price" type="text" class="field" placeholder="Price/Day">
+				<input formControlName="year" type="text" class="field" placeholder="Year">
+				<button class="btn" (click)="onCreateRent()">Post</button>
+			</form>
 		</div>
 	</div>
 </div>
