@@ -37,14 +37,14 @@
                   <span class="spec">{{rent.year}}</span>
                 </li>
               </ul>
-              <div class="rent-action">
-                <a href="contact.html" class="btn btn-primary">Rent Now</a> 
-                <a href="contact.html" class="btn btn-primary">Edit</a>
-                <a href="contact.html" class="btn btn-primary">Delete</a>
+              <div class="rent-action" *ngIf="isLogged">
+                <a class="btn btn-primary" *ngIf="isLogged && (usera._id != rent.ownerId)" (click)="isRentingClick()">Rent Now</a> 
+                <a class="btn btn-primary" *ngIf="isLogged && (usera._id == rent.ownerId)">Edit</a>
+                <a class="btn btn-primary" *ngIf="isLogged && (usera._id == rent.ownerId)">Delete</a>
               </div>
             </div>
           </div>
-          <div class="infoandform">
+          <div class="infoandform" *ngIf="isRenting">
             <div class="reservedbox">
                 <h2>This car has been reserved on the dates that are listed bellow:</h2>
                 

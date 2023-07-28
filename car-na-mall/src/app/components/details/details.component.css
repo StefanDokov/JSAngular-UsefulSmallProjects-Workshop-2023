@@ -68,10 +68,12 @@
   text-decoration: none;
   color: blue;
   line-height: 1;
+  
 }
 .rent-action a:hover {
   background: salmon;
   color: white;
+  cursor: pointer;
 }
 
 .text-center {
