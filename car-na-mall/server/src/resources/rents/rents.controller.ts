@@ -60,7 +60,7 @@ class RentController implements Controller {
 
          const post = await this.RentService.craft(model, image, doors, seats, transmission, price, year, ownerId);
 
-         res.status(201).json({post});
+         res.status(201).json({post, message: 'Rent Created!'});
 
         } catch(err: any) {
            next(new HttpException(400, 'Cannot create rent'));
