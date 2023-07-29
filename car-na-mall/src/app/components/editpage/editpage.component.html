@@ -2,22 +2,25 @@
     <h2>Edit a Card</h2>
     <p>Here you can edit yor post about the car which you are willing to lease to people with our website's help!</p>
   </div>
+  <div *ngIf="!isLoaded">
+	Loading...
+  </div>
 
-<div class="backgroundedit">
+<div class="backgroundedit" *ngIf="isLoaded">
 	<div class="containeredt">
 		<div class="contact-box">
 			<div class="left"></div>
-			<div class="right">
+			<form class="right" [formGroup]="editForm">
 				<h2>Edit a Post</h2>
-				<input type="text" class="field" placeholder="Model">
-				<input type="text" class="field" placeholder="imgaeUrl">
-				<input type="text" class="field" placeholder="Doors">
-				<input type="text" class="field" placeholder="Seats">
-				<input type="text" class="field" placeholder="Transmission">
-				<input type="text" class="field" placeholder="Price/Day">
-				<input type="text" class="field" placeholder="Year">
-				<button class="btn">Edit</button>
-			</div>
+				<input type="text" class="field" placeholder="Model" formControlName="model">
+				<input type="text" class="field" placeholder="imgaeUrl" formControlName="image">
+				<input type="text" class="field" placeholder="Doors" formControlName="doors">
+				<input type="text" class="field" placeholder="Seats" formControlName="seats">
+				<input type="text" class="field" placeholder="Transmission" formControlName="transmission">
+				<input type="text" class="field" placeholder="Price/Day" formControlName="price">
+				<input type="text" class="field" placeholder="Year" formControlName="year">
+				<button class="btn" (click)="onEditClick()">Edit</button>
+			</form>
 		</div>
 	</div>
 </div>

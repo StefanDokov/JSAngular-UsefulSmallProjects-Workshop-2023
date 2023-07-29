@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { Profile } from '../types/user';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class AuthService implements OnDestroy {
   private user$$ = new BehaviorSubject<any | undefined>(undefined);
   public user$ = this.user$$.asObservable();
 
-  user: undefined;
+  user: Profile | undefined;
 
   subscription: Subscription;
 

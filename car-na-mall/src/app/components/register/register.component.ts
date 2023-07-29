@@ -38,7 +38,6 @@ export class RegisterComponent implements OnInit{
         next: (res => {
           this.toast.success({detail: 'SUCCESS', summary: res.message, duration: 5000})
           this.auth.storeToken(res.token);
-          this.auth.getProfile();
           this.registerForm.reset();
           this.router.navigate(['cars']);
         }),

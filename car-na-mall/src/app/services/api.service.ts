@@ -24,4 +24,11 @@ export class ApiService {
   getOneRent(id: any){
     return this.http.get<any>(`${this.baseUrl}/rents/details/${id}`, );
   }
+
+  editRent(id: string, editObj: any){
+    return this.http.post<any>(`${this.baseUrl}/rents/${id}/edit`, editObj)
+  }
+  deleteRent(id: string) {
+    return this.http.delete<any>(`${this.baseUrl}/rents/${id}/delete`);
+  }
 }
