@@ -43,19 +43,29 @@ class RentService {
           }
     }
 
-    public async updateRent(id: string, rent: Rent): Promise<Rent | null> {
+    public async updateRent(id: string, rent: Rent): Promise<any | null> {
         try {
             const aRent = await this.rents.findById(id);
             if(!aRent){
                 throw new Error('No such Rent!')
             }
-            return await this.rents.findByIdAndUpdate(id, rent);
+            await this.rents.findByIdAndUpdate( id, rent, {new: true});
+            // aRent.model = rent.model;
+            // aRent.image = rent.image;
+            // aRent.doors = rent.doors;
+            // aRent.seats = rent.seats;
+            // aRent.transmission = rent.transmission;
+            // aRent.price = rent.price;
+            // aRent.year = rent.year;
+            // aRent.ownerId = rent.ownerId;
+
+            // await aRent.save();
         } catch (error:any) {
             throw new Error(error.message);
         }
     }
 
-    public async deleteRent(id:string): Promise<Rent | null> {
+    public async deleteRent(id:string): Promise< null> {
         try {
             const aRent = await this.rents.findById(id);
             if(!aRent){
