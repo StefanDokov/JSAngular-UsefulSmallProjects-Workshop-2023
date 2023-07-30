@@ -78,18 +78,18 @@ class RentService {
 
     }
     public async updateRentOffer(rentId: string,
-        update: Reserve,
+        updateRent: Reserve,
     ): Promise<string | Error | void> {
         try {
             const renta = await this.rents.findById(rentId);
             if (!renta) {
                 throw new Error ('Unable to find a user with that Email Address')
             }
-            renta.reserves.push(update);
+            renta.reserves.push(updateRent);
             await renta.save();
             
         } catch (error) {
-            throw new Error('Unable to login user');
+            throw new Error('Unable to update rent!');
         }
     }
 

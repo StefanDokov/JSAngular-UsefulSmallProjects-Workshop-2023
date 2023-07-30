@@ -12,12 +12,13 @@ const craft = Joi.object({
 });
 
 const rentInfo = Joi.object({
-     id: Joi.string().required(),
-     update: {resOwner: Joi.string().required(),
+     rentId: Joi.string().required(),
+     updateRent: {
+     resOwner: Joi.string().required(),
      dateFrom: Joi.string().required(),
-     dateDays: Joi.number().min(1).required(),
-     cardN: Joi.string().required(),
-     costMoney: Joi.number().min(1).required(),
+     forDays: Joi.number().min(1).required(),
+     cardNum: Joi.string().required(),
+     costPrice: Joi.number().min(1).required(),
      }
 })
 

@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import User from "./user.interface";
 
 const ReserveSchema = new Schema( {
-    date: {
+    dateFrom: {
         type: String,
         required: false,
     },

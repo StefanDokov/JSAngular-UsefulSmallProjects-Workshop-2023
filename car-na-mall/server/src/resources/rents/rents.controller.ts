@@ -74,7 +74,7 @@ class RentController implements Controller {
     ) : Promise<Response | void> => {
         try {
             const resu = await this.RentService.getRents();
-            res.status(200).json({resu});
+            res.status(200).json(resu);
         } catch (error) {
             return next(new HttpException(404, 'Can\'t reach rents'))
         }
@@ -125,8 +125,8 @@ class RentController implements Controller {
         next: NextFunction
     ) : Promise<Response | void> => {
         try {
-            const {id, update} = req.body;
-            const resu = await this.RentService.updateRentOffer(id, update);
+            const {rentId, updateRent} = req.body;
+            const resu = await this.RentService.updateRentOffer(rentId, updateRent);
             res.status(200).json({resu});
         } catch (error) {
             return next(new HttpException(404, 'Can\'t reach rents'))

@@ -1,11 +1,11 @@
 import { Document, RefType } from "mongoose";
 
 export interface Reserve extends Document {
-    resOwner: RefType;
     dateFrom: string;
-    dateDays: number;
-    cardN: string;
-    costMoney: number;
+    forDays: number;
+    cardNum: string;
+    costPrice: number;
+    resOwner: RefType;
 }
 
 export interface Rent extends Document {

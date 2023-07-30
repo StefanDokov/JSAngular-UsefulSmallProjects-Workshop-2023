@@ -15,7 +15,7 @@ const login = Joi.object({
 const update = Joi.object({
     userId: Joi.string().required(),
     update: {
-        date: Joi.string().required(),
+        dateFrom: Joi.string().required(),
         forDays: Joi.number().min(1).required(),
         cardNum: Joi.string().required(),
         costPrice: Joi.number().min(1).required(),

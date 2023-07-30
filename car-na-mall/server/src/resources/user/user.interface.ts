@@ -1,7 +1,7 @@
 import { Document, RefType } from "mongoose";
 
 export default interface Ureserve extends Document {
-    date: string;
+    dateFrom: string;
     forDays: number;
     cardNum: string;
     costPrice: number;
