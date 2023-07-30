@@ -2,8 +2,10 @@
     <h2>Car Details</h2>
     <p>You have clicked on a specific car offer of our park. If you have account with us you can book it for a desired amount of time, if available!</p>
   </div>
-
-<div class="maindetailcontainer">
+  <div *ngIf="!isLoad">
+    Loading...
+    </div>
+<div class="maindetailcontainer" *ngIf="isLoad">
     <div class="detailandform">
         <div class="item-1 colrow">
             <a href="#"><img src="{{rent.image}}" alt="Image" class="img-fluid"></a>
@@ -54,20 +56,19 @@
             </div>
             <div class="rentoform">
                 <h2>Reserve this car</h2>
-                <form action="">
+                <form action="" [formGroup]="infoForm">
                 <label for="from">From</label>
-                <input type="text" name="form" placeholder="dd-mm-yyyy">
+                <input type="text" name="form" placeholder="dd-mm-yyyy" formControlName="dateFrom">
                 <label for="for">How many days?</label>
-                <select name="for">
-                  <option value="1">1 day</option>
-                  <option value="2">2 days</option>
-                  <option value="3">3 days</option>
+                <select name="for" formControlName="forDays">
+                  <option *ngFor="let option of options" [value]="option">{{option}} days</option>
+                  
                 </select>
                 <label for="card">Card Number</label>
-                <input type="text" name="card">
+                <input type="text" name="card" formControlName="cardNum">
                 <label for="cost">Cost</label>
-                <input type="text" name="cost" disabled="true">
-                <button type="submit">Pay</button>
+                <input type="text" name="cost" formControlName="costPrice"  >
+                <button type="submit" (click)="postInfo()">Pay</button>
                 </form>
             </div>
           </div>

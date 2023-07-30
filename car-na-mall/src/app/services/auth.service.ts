@@ -51,7 +51,10 @@ export class AuthService implements OnDestroy {
   get isLoggedIn(): boolean {
     return !!this.user;
   }
-
+  
+  infoUpdate(userId: string, update: any){
+    return this.http.post<any>(`${this.baseUrl}/update`,{userId, update});
+  }
 
   logOut() {
     localStorage.removeItem('token');

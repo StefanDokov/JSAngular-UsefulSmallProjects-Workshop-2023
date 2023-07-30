@@ -69,6 +69,10 @@
     color: white;
     border-radius: 5px;
 }
+.form-group:last-of-type input:hover{
+  background: indianred;
+  cursor: pointer;
+}
 
 .form-group {
     flex: 0 0 100%;

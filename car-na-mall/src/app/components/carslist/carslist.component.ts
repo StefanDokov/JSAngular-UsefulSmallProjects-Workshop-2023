@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
-interface Car {
+export interface Car {
+  _id: string;
   model: string;
   doors: number;
   seats: number;
   transmission: string;
-  cost: number;
+  price: number;
   image: string;
   year: number;
-
+  ownerId: string;
 }
 @Component({
   selector: 'app-carslist',
@@ -17,77 +19,25 @@ interface Car {
 })
 
 
-export class CarslistComponent {
-  carsLister: Car[] = [
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      year: 2018,
-      cost: 100,
-      image: '/assets/images/carslistbg.jpg',
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      year: 2018,
-      cost: 100,
-      image: '/assets/images/carslistbg.jpg',
+export class CarslistComponent implements OnInit{
+  carsLister: Car[] | undefined;
+  isLoaded = false;
 
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      cost: 100,
-      year: 2018,
-      image: '/assets/images/carslistbg.jpg',
+  constructor(private api: ApiService){}
 
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      cost: 100,
-      year: 2018,
-      image: '/assets/images/carslistbg.jpg',
-
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      cost: 100,
-      year: 2018,
-      image: '/assets/images/carslistbg.jpg',
-
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      year: 2018,
-      cost: 100,
-      image: '/assets/images/carslistbg.jpg',
-
-  },
-    {
-      model: 'Suzuki',
-      doors: 4,
-      seats: 5,
-      transmission: 'manual',
-      year: 2018,
-      cost: 100,
-      image: '/assets/images/carslistbg.jpg',
-  },
-  ]
-
+  ngOnInit(): void {
+    setTimeout(()=> {
+      this.getRentss();
+      this.isLoaded = true;
+    }, 1000);
+    
+    
+  }
+    
+getRentss() { 
+    this.api.getRents().subscribe((res) => {
+      this.carsLister = res;
+    });
+  }
 
 }

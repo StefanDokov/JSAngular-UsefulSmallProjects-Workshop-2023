@@ -39,6 +39,7 @@
     flex-wrap: wrap;
     gap: 2em;
   }
+  
 
   .colrow {
     flex: 0 0 30%;
@@ -50,7 +51,7 @@
   }
   .item-1 img {
     width: 100%;
-    height: auto;
+    height: 300px;
   }
   
   .item-1 h3 a {

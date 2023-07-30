@@ -9,30 +9,30 @@
     <p>This form will help you to reach us faster. Our supports are available 24/7. You can call us anytime!</p>
     <div class="formandside">
         <div class="formstructure">
-            <form action="#" method="post">
+            <form action="#" [formGroup]="postForm">
               <div class="form-group">
                 <div>
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" placeholder="First name" formControlName="fname">
                 </div>
                 <div>
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  <input type="text" class="form-control" placeholder="Email address">
+                  <input type="text" class="form-control" placeholder="Last name" formControlName="sname">
                 </div>
               </div>
 
               <div class="form-group">
                 <div>
-                  <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                  <input type="email" class="form-control" placeholder="Email address" formControlName="email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10" formControlName="descr"></textarea>
                 </div>
               </div>
               <div class="form-group">
                 <div>
-                  <input type="submit"  value="Send Message">
+                  <input type="submit"  value="Send Message" (click)="onPost()">
                 </div>
               </div>
             </form>
